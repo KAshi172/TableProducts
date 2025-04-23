@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Produtos - FakeStore</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- jsPDF & html2canvas -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .container {
+      margin-top: 30px;
+    }
+
+    .table-custom th, .table-custom td {
+      vertical-align: middle;
+    }
+
+    .table-container {
+      margin-top: 50px;
+    }
+
+    .btn-download {
+      margin-bottom: 20px;
+      border-radius: 50px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+    }
+
+    .btn-download:hover {
+      background-color: #0056b3;
+    }
+
+    .table-responsive {
+      max-width: 100%;
+      overflow-x: auto;
+    }
+
+    .pagination-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .pagination a {
+      margin: 0 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h2 class="text-primary">Produtos - FakeStore</h2>
+      <button class="btn btn-outline-danger btn-download" onclick="generatePDF()">Baixar PDF</button>
+    </div>
+
+    <!-- Tabela de Produtos -->
+    <div class="table-container">
+      <h4 class="mt-5">Tabela de Produtos</h4>
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover table-custom">
+          <thead class="table-primary">
+            <tr>
+              <th>ID</th>
+              <th>Imagem</th>
+              <th>Título</th>
+              <th>Preço</th>
+              <th>Categoria</th>
+            </tr>
+          </thead>
+          <tbody id="product-table-body">
+            <!-- Dados da tabela vão aqui -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Paginação -->
+    <div class="pagination-container" id="pagination-container">
+      <!-- Paginação será gerada aqui -->
+    </div>
+  </div>
+
+<script src="src/scripit.js"></script>
+</body>
+</html>
